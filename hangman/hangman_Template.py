@@ -45,7 +45,7 @@ class Hangman:
         word_list = ["apple","banana","kiwi","orange","grape"]        
         # TODO 2: Print two message upon initialization        
         # 1. "The mistery word has {num_letters} characters"
-        print("The mistery word has {num_letters = 4})
+        print("the mistery word has {num_letters = 4})
         # 2. {word_guessed}
               print({word_guessed} = ["kiwi"])
         pass
