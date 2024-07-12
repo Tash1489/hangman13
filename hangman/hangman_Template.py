@@ -59,6 +59,17 @@ class Hangman:
         pass
 
     def check_letter(self, letter) -> None:
+        if letter in self.word:
+            for i in range(len(self.word)):
+                if self.word[i] == letter:
+                    self.word_guessed[i] = letter
+                    self.num_letters -= 1
+                    print(f"nice! {letter} is in word")
+                    print("".join(self.word_guessed))
+                else: self.num_lives -= 1 
+                print(f"sorry, {letter} is not in the word.")
+                print(f"you have {self.num_lives} lives left.")
+                self.list_letters.append(letter)
         '''
         Checks if the letter is in the word.
         If it is, it replaces the '_' in the word_guessed list with the letter.
@@ -70,8 +81,7 @@ class Hangman:
             The letter to be checked
 
         '''
-        # TODO 3: Check if the letter is in the word. TIP: You can use the lower() method to convert the letter to lowercase
-        
+        # TODO 3: Check if the letter is in the word. TIP: You can use the lower() method to convert the letter to lowercase 
         # TODO 3: If the letter is in the word, replace the '_' in the word_guessed list with the letter
         # TODO 3: If the letter is in the word, the number of UNIQUE letters in the word that have not been guessed yet has to be reduced by 1
         # TODO 3: If the letter is not in the word, reduce the number of lives by 1
