@@ -41,12 +41,20 @@ class Hangman:
         Asks the user for a letter.
     '''
     def __init__(self, word_list, num_lives=5):
-        # TODO 2: Initialize the attributes as indicated in the docstring
-        word_list = ["apple","banana","kiwi","orange","grape"]        
+        self.word =
+        random.choice(word_list)
+        self.word_guessed = ["_" for _ in self.word]
+        self.num_letters = 
+        len(set(self.word))
+        self.num_lives = num_lives
+        self.list_letters = [] 
+        # TODO 2: Initialize the attributes as indincated in the dcstring
         # TODO 2: Print two message upon initialization        
         # 1. "The mistery word has {num_letters} characters"
+        print(f"the mystery word has {len(self.word)} characters")
         print("the mistery word has {num_letters = 4}")
-        # 2. {word_guessed}
+        # 2. {word_guessed} 
+        print("".join(self.word_guessed))
         (["_" "_" "_" "_"])
         pass
 
