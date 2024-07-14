@@ -41,11 +41,9 @@ class Hangman:
         Asks the user for a letter.
     '''
     def __init__(self, word_list, num_lives=5):
-        self.word =
-        random.choice(word_list)
+        self.word = random.choice(word_list)
         self.word_guessed = ["_" for _ in self.word]
-        self.num_letters = 
-        len(set(self.word))
+        self.num_letters = len(set(self.word))
         self.num_lives = num_lives
         self.list_letters = [] 
         # TODO 2: Initialize the attributes as indincated in the dcstring
@@ -89,6 +87,13 @@ class Hangman:
         pass
 
     def ask_letter(self):
+        while True:
+            letter = input("please, enter a letter").lower()
+            if len(letter) != 1:
+                print(f"{letter} was already tried")
+            else: 
+                self.check_letter(letter)
+                break
         '''
         Asks the user for a letter and checks two things:
         1. If the letter has already been tried
